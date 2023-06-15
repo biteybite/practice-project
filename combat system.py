@@ -47,7 +47,7 @@ def stat_roll():
 def ancestry():
     print("From what peoples do you hail?")
     race_choice = str.casefold(input("> "))
-    if race_choice == "dwarf" or "dwarves":
+    if race_choice == ("dwarf" or "dwarves"):
         global player_constitution, player_strength, player_dexterity, player_race
         player_race = "dwarf"
         player_constitution += 2
@@ -63,6 +63,10 @@ def ancestry():
             player_strength -= 2
             player_dexterity +=2
             ancestry()
+    else:
+        print("Never heard of them. Try again.")
+        ancestry()
+        
 
 
 def character_creation():

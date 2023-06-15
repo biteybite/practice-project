@@ -44,8 +44,30 @@ def stat_roll():
     stat_total = sum(stat_result)
     return stat_total
 
+def ancestry():
+    print("From what peoples do you hail?")
+    race_choice = str.casefold(input("> "))
+    if race_choice == "dwarf" or "dwarves":
+        global player_constitution, player_strength, player_dexterity, player_race
+        player_race = "dwarf"
+        player_constitution += 2
+        player_strength += 2
+        player_dexterity -=2
+        print(f"You are a {player_race}. Your constitution is now {player_constitution}. Your strength is now {player_strength}. Your dexterity is now {player_dexterity}")
+        print("Press y to confirm your choice. Press n to choose a different origin.")
+        choice = input("> ")
+        if choice == "y":
+            print("Confirmed, friend dwarf.")
+        else:
+            player_constitution -= 2
+            player_strength -= 2
+            player_dexterity +=2
+            ancestry()
+
+
 def character_creation():
     print("What is your name?")
+    global player_name
     player_name = input("> ")
 
     print("Let's roll your stats.")
@@ -63,7 +85,7 @@ def character_creation():
     print(f"You have a intelligence score of {player_intelligence}")
     player_wisdom = stat_roll()
     print(f"You have a wisdom score of {player_wisdom}")
+    ancestry()
 
-    print("From what peoples do you hail?")
 
 character_creation()

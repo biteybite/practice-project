@@ -1,17 +1,5 @@
 import random
 
-player_ac = 18
-player_strength = 4
-player_proficiency = 2
-player_bonus = 1
-player_hp = 50
-enemy_ac = 10
-enemy_strength = 2
-enemy_proficiency = 0
-enemy_bonus = 0
-enemy_hp = 100
-
-
 def attack_roll():
     die_roll = random.randint(1, 20)
     a_roll_total = die_roll + player_strength + player_proficiency + player_bonus
@@ -47,4 +35,35 @@ def enemy_attack_roll():
         print(f"{a_roll_total}! Fortunately, their swing misses.")
     next_turn()
 
-next_turn()
+def stat_roll():
+    stat_result = []
+    for _ in range(4):
+        roll = random.randint(1, 6)
+        stat_result.append(roll)
+    stat_result.remove(min(stat_result))
+    stat_total = sum(stat_result)
+    return stat_total
+
+def character_creation():
+    print("What is your name?")
+    player_name = input("> ")
+
+    print("Let's roll your stats.")
+    input("> ")
+    global player_strength, player_constitution, player_dexterity, player_charisma, player_intelligence, player_wisdom
+    player_strength = stat_roll()
+    print(f"You have a strength score of {player_strength}")
+    player_constitution = stat_roll()
+    print(f"You have a constitution score of {player_constitution}")
+    player_dexterity = stat_roll()
+    print(f"You have a dexterity score of {player_dexterity}")
+    player_charisma = stat_roll()
+    print(f"You have a charisma score of {player_charisma}")
+    player_intelligence = stat_roll()
+    print(f"You have a intelligence score of {player_intelligence}")
+    player_wisdom = stat_roll()
+    print(f"You have a wisdom score of {player_wisdom}")
+
+    print("From what peoples do you hail?")
+
+character_creation()

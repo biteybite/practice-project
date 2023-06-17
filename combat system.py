@@ -1,5 +1,6 @@
 import random
 
+<<<<<<< HEAD
 
 class Player:
     
@@ -269,6 +270,109 @@ class Player:
                 self.clear_stats()
                 self.ancestry()
                 
+=======
+class Player:
+    def __init__(self):
+        self.name = input('What is your name?\n> ')
+        self.race = None
+        self.STR = stat_roll()
+        self.CON = stat_roll()
+        self.DEX = stat_roll()
+        self.CHA = stat_roll()
+        self.INT = stat_roll()
+        self.WIS = stat_roll()
+
+    def print_attributes(self):
+        print(f"{self.name}'s attributes are:\nSTR: {self.STR}, CON: {self.CON}, DEX: {self.DEX}, CHA: {self.CHA}, INT: {self.INT}, WIS: {self.WIS}")
+    
+    def ancestry(self):
+        print(f"From what peoples does {self.name} hail?")
+        race_choice = str.casefold(input("> "))
+    
+        if (race_choice.__contains__("dwarf" or "dwarves")):
+            self.race = "dwarf"
+            self.CON += 2
+            self.STR += 2
+            self.DEX -=2
+            print(f"{self.name} is a {self.race}.")
+            self.print_attributes()
+            print("Press y to confirm your choice. Press n to choose a different origin.")
+            choice = input("> ")
+            if choice == "y":
+                print(f"Confirmed, {self.name} is a {self.race}.")
+            else:
+                self.CON -= 2
+                self.STR -= 2
+                self.DEX +=2
+                self.ancestry()
+            
+        elif (race_choice.__contains__("elf" or "elves") and not race_choice.__contains__("half")):
+            self.race = "elf"
+            self.CON -= 2
+            self.DEX += 2
+            self.INT += 2
+            print(f"{self.name} is a {self.race}.")
+            self.print_attributes()
+            print("Press y to confirm your choice. Press n to choose a different origin.")
+            choice = input("> ")
+            if choice == "y":
+                print(f"Confirmed, {self.name} is a {self.race}.")
+            else:
+                self.CON += 2
+                self.DEX -= 2
+                self.INT -= 2
+                self.ancestry()
+    
+        elif (race_choice.__contains__("elf" or "elves") and race_choice.__contains__("half")):
+            self.race = "half-elf"
+            self.CHA += 2
+            print(f"{self.name} is a {self.race}.")
+            self.print_attributes()
+            print("Press y to confirm your choice. Press n to choose a different origin.")
+            choice = input("> ")
+            if choice == "y":
+                print(f"Confirmed, {self.name} is a {self.race}.")
+            else:
+                self.CHA -= 2
+                self.ancestry()
+            
+        elif race_choice.__contains__("halfling"):
+            self.race = "halfling"
+            self.DEX += 2
+            self.STR -= 2
+            self.WIS += 2
+            print(f"{self.name} is a {self.race}.")
+            self.print_attributes()
+            print("Press y to confirm your choice. Press n to choose a different origin.")
+            choice = input("> ")
+            if choice == "y":
+                print(f"Confirmed, {self.name} is a {self.race}.")
+            else:
+                self.DEX -= 2
+                self.STR += 2
+                self.WIS -= 2
+                self.ancestry()
+    
+        elif race_choice.__contains__("human"):
+            self.race = "human"
+            self.DEX += 1
+            self.STR += 1
+            self.WIS += 1
+            self.CHA += 1
+            self.INT += 1
+            self.CON += 1
+            print(f"{self.name} is a {self.race}.")
+            self.print_attributes()
+            print("Press y to confirm your choice. Press n to choose a different origin.")
+            choice = input("> ")
+            if choice == "y":
+                print(f"Confirmed, {self.name} is a {self.race}.")
+            else:
+                self.DEX -= 2
+                self.STR += 2
+                self.WIS -= 2
+                self.ancestry()
+>>>>>>> bf17b9554dd5c341ab2506039dd98905ab59c8dd
 
         else:
             print("Never heard of them. Try again.")
@@ -288,12 +392,23 @@ def stat_roll():
 
         
 p1 = Player()
+<<<<<<< HEAD
 
 p1.print_status()
 
 p1.ancestry()
+=======
+p2 = Player()
+p3 = Player()
+p4 = Player()
+>>>>>>> bf17b9554dd5c341ab2506039dd98905ab59c8dd
 
+p1.print_attributes()
+p2.print_attributes()
+p3.print_attributes()
+p4.print_attributes()
 
+<<<<<<< HEAD
 def party_stats():
     p1.print_status()
     p2.print_status()
@@ -301,6 +416,21 @@ def party_stats():
     p4.print_status()
 
 
+=======
+p1.ancestry()
+p2.ancestry()
+p3.ancestry()
+p4.ancestry()
+
+def party_stats():
+    p1.print_attributes()
+    p2.print_attributes()
+    p3.print_attributes()
+    p4.print_attributes()
+
+party_stats()
+
+>>>>>>> bf17b9554dd5c341ab2506039dd98905ab59c8dd
 # def attack_roll():
 #     die_roll = random.randint(1, 20)
 #     a_roll_total = die_roll + self.STR + player_proficiency + player_bonus

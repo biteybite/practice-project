@@ -12,6 +12,8 @@ class Player:
         self.Class = None
         self.size = None
         self.speed = None
+        self.key_ability = None
+        self.perception = "Untrained"
         self.languages = []
         self.abilities = []
         self.inventory = []
@@ -82,6 +84,8 @@ class Player:
             "Thievery": "Untrained",
         }
         self.feats = []
+        self.formulas = []
+        self.spells = []
         
     def clear_stats(self):
         self.ancestry = None
@@ -191,16 +195,40 @@ class Class:
         self.description = description
         self.key_ability = key_ability
         self.HP = HP
-        self.skills = skills
         self.saving_throws = saving_throws
+        self.skills = skills
         self.attacks = attacks
         self.defenses = defenses
         self.class_DC = class_DC
         self.feats = feats
-        self.features = features
         
     def level_up(self, player, level):
         pass
+
+class Alchemist(Class):
+    def __init__(self):
+        description = "PLACEHOLDER"
+        key_ability = "INT"
+        HP = 8
+        saving_throws = {
+            "Fortitude": "Expert",
+            "Reflex": "Expert",
+            "Will": "Expert"}
+        skills = {
+            "Crafting": "Trained"
+        }
+        attacks = {
+            "Simple Weapons": "Trained",
+            "Alchemical Bombs": "Trained",
+            "Unarmed Attacks": "Trained",
+        }
+        defenses = {
+            "Medium Armor": "Trained",
+            "Light Armor": "Trained",
+            "Unarmored Defense": "Trained",
+        }
+        class_DC = {
+            "Alchemist" : "Trained"}
 
 
     

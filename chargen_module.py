@@ -107,9 +107,25 @@ class Ancestry:
     
 #ANCESTRIES GO HERE        
 
-khevidun = Ancestry("Khevidun", "Hailing from the verdant coastline, fertile valleys and rolling foothills of the Kazbari Mountains, the Khevidun live scattered among a dozen petty kingdoms and principalities. The Khevidun are slightly shorter than the average person, and most prevalently, possess brown hair in loose curls, amber eyes, and an olive-skinned complexion. The Kazbari Mountains are home to vinyards and shepherds, terraced fields, and expansive mountain-fortresses. The predominant religion of the Khevidun is ancestor worship, although there still exist cults to their old gods, the most common of which is Mzisara, the Khevidun goddess of the Sun.",{"CON": 1, "WIL": 1}, ["Enhanced Endurance"], {"Melee": 1, "Shelter Construction": 1, "Hauling": 1, "Athletics": 1, "Persuasion": 1, "Cooking": 1}, {"Clan Dagger": 1}, ["Common", "Khevidun"])
+khevidun = Ancestry(
+    "Khevidun",
+    "Hailing from the verdant coastline, fertile valleys and rolling foothills of the Kazbari Mountains, the Khevidun live scattered among a dozen petty kingdoms and principalities. The Khevidun are slightly shorter than the average person, and most prevalently, possess brown hair in loose curls, amber eyes, and an olive-skinned complexion. The Kazbari Mountains are home to vinyards and shepherds, terraced fields, and expansive mountain-fortresses. The predominant religion of the Khevidun is ancestor worship, although there still exist cults to their old gods, the most common of which is Mzisara, the Khevidun goddess of the Sun.",
+    {"CON": 1, "WIL": 1},
+    ["Enhanced Endurance"],
+    {"Melee": 1, "Shelter Construction": 1, "Hauling": 1, "Athletics": 1, "Persuasion": 1, "Cooking": 1},
+    {"Clan Dagger": 1},
+    ["Common", "Khevidun"]
+)
 
-danayra = Ancestry("Danayra", "Known in the common tongue as 'Amazons,' the Danayra are a loose confederation of tribes and clans whose territory stretches across the vast Dahātrus steppe. Their society is matriarchal in nature; every settlement is lead by a clan elder. The Danayra are masters of the horse, and it is said they were the first to domesticate them. They live, for the most part, in semi-nomadic tent cities, and thrive on fishing, trade, hunting, and of course, animal husbandry. They are fair-skinned, with hair that ranges from blond to black. They are of above-average height, and their women tend to be even taller than their men.",{"SPD": 1, "INT": 1}, ["Savvy Outdoorsman"], {"Archery": 1, "Riding": 1, "Bargaining": 1, "Navigation": 1, "Hunting and Trapping": 1, "Animal Handling": 1}, {"Recurve Bow": 1, "Arrow": 10}, ["Common", "Danayra"])
+danayra = Ancestry(
+    "Danayra",
+    "Known in the common tongue as 'Amazons,' the Danayra are a loose confederation of tribes and clans whose territory stretches across the vast Dahātrus steppe. Their society is matriarchal in nature; every settlement is lead by a clan elder. The Danayra are masters of the horse, and it is said they were the first to domesticate them. They live, for the most part, in semi-nomadic tent cities, and thrive on fishing, trade, hunting, and of course, animal husbandry. They are fair-skinned, with hair that ranges from blond to black. They are of above-average height, and their women tend to be even taller than their men.",
+    {"SPD": 1, "INT": 1},
+    ["Savvy Outdoorsman"],
+    {"Archery": 1, "Riding": 1, "Bargaining": 1, "Navigation": 1, "Hunting and Trapping": 1, "Animal Handling": 1},
+    {"Recurve Bow": 1, "Arrow": 10},
+    ["Common", "Danayra"]
+)
 
 
 ancestries = [khevidun, danayra]
@@ -172,9 +188,23 @@ class Background:
         self.awakened = awakened
     
 
-hunter = Background("Hunter", "PLACEHOLDER", {"INT": 1, "REF": 1, "SPD": 1}, {"Archery": 2, "Hunting and Trapping": 2, "Navigation": 2, "Foraging and Herbalism": 2, "Shelter Construction": 2, "Perception": 2}, {"Tent": 1, "Backpack": 1, "Flint and Steel": 1, "Hunting Knife": 1, "Hatchet": 1, "Rope": 1, "Bow": 1, "Arrow": 10, "Wool Pants": 1, "Leather Boots": 1, "Wool Shirt": 3}, False)
+hunter = Background(
+    "Hunter",
+    "PLACEHOLDER",
+    {"INT": 1, "REF": 1, "SPD": 1},
+    {"Archery": 2, "Hunting and Trapping": 2, "Navigation": 2, "Foraging and Herbalism": 2, "Shelter Construction": 2, "Perception": 2},
+    {"Tent": 1, "Backpack": 1, "Flint and Steel": 1, "Hunting Knife": 1, "Hatchet": 1, "Rope": 1, "Bow": 1, "Arrow": 10, "Wool Pants": 1, "Leather Boots": 1, "Wool Shirt": 3},
+    False,
+)
 
-acolyte = Background("Acolyte", "PLACEHOLDER", {"MAG": 1, "WIL": 1, "LOG": 1}, {"Numinous Perception": 2, "Spellcasting": 2, "Summoning": 2, "Arcana": 2, "Persuasion": 2, "Intimidation": 2}, {"Ceremonial Dagger": 1, "Block of Incense": 1, "Candles": 5, "Ceremonial Robes": 1, "Shoes": 1, "Rope": 1, "Simple Sack": 1}, True)
+acolyte = Background(
+    "Acolyte",
+    "PLACEHOLDER",
+    {"MAG": 1, "WIL": 1, "LOG": 1},
+    {"Numinous Perception": 2, "Spellcasting": 2, "Summoning": 2, "Arcana": 2, "Persuasion": 2, "Intimidation": 2},
+    {"Ceremonial Dagger": 1, "Block of Incense": 1, "Candles": 5, "Ceremonial Robes": 1, "Shoes": 1, "Rope": 1, "Simple Sack": 1},
+    True
+)
 
 
 backgrounds = [hunter, acolyte]
